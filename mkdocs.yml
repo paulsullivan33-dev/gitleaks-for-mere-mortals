@@ -1,0 +1,28 @@
+site_name: Gitleaks for Mere Mortals
+site_description: A scanner that searches your git history for secrets you committed and then forgot. Finding keys in old commits, reading what it reports, tuning out the false alarms, and catching the next secret before it lands, with the ethics and the limits stated plainly.
+site_url: https://paulsullivan33-dev.github.io/gitleaks-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Gitleaks Is: what-gitleaks-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Gitleaks: installing-gitleaks.md
+  - Your First Scan: your-first-scan.md
+  - Reading Findings: reading-findings.md
+  - History Is Forever: history-is-forever.md
+  - Scanning Folders and Text: scanning-folders-and-text.md
+  - Reports and Exit Codes: reports-and-exit-codes.md
+  - Tuning the Noise: tuning-the-noise.md
+  - Catching It Early: catching-it-early.md
+  - When You Find a Real One: when-you-find-a-real-one.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

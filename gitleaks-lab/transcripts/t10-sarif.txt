@@ -1,0 +1,11 @@
+$ gitleaks git --no-banner --no-color --report-format sarif --report-path ../report.sarif .
+4:51AM INF 8 commits scanned.
+4:51AM INF scanned ~2900 bytes (2.90 KB) in 221ms
+4:51AM WRN leaks found: 6
+exit code: 1
+$ jq '{version: .version, runs: (.runs | length), results: (.runs[0].results | length)}' ../report.sarif
+{
+  "version": "2.1.0",
+  "runs": 1,
+  "results": 6
+}

@@ -1,0 +1,6 @@
+$ sha256sum gitleaks_8.30.1_linux_x64.tar.gz
+551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  gitleaks_8.30.1_linux_x64.tar.gz
+$ grep linux_x64 gitleaks_8.30.1_checksums.txt
+551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  gitleaks_8.30.1_linux_x64.tar.gz
+$ gitleaks version
+8.30.1

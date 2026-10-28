@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A git pre-commit hook that refuses to commit anything gitleaks
+# flags in the staged changes. Install it with:
+#
+#   cp gitleaks-lab/pre-commit leaky-app/.git/hooks/pre-commit
+#   chmod +x leaky-app/.git/hooks/pre-commit
+#
+# It expects `gitleaks` on PATH. Chapter 10 walks through it.
+exec gitleaks git --pre-commit --staged --no-banner --no-color

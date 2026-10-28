@@ -1,0 +1,15 @@
+$ cat loose-files/.env
+SKYWATCH_API_TOKEN=skw_live_aaaabbbbccccdddd00001111222233334
+AWS_ACCESS_KEY_ID=AKIAZ3X5CV7BN2MK4Q6R
+$ gitleaks dir --no-banner --no-color loose-files
+4:51AM INF scanned ~146 bytes (146 bytes) in 14.6ms
+4:51AM WRN leaks found: 2
+exit code: 1
+$ gitleaks dir --no-banner --no-color leaky-app
+4:51AM INF scanned ~2411 bytes (2.41 KB) in 17.6ms
+4:51AM WRN leaks found: 3
+exit code: 1
+$ printf 'token = "skw_live_5555aaaabbbbccccddddeeeeffff000011112222"\n' | gitleaks stdin --no-banner --no-color
+4:51AM INF scanned ~60 bytes (60 bytes) in 206ms
+4:51AM WRN leaks found: 1
+exit code: 1

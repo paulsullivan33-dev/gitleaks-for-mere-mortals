@@ -1,0 +1,20 @@
+$ cp ../gitleaks-lab/pre-commit .git/hooks/pre-commit
+$ chmod +x .git/hooks/pre-commit
+$ echo 'BACKUP_TOKEN = "skw_live_0123456789abcdef0123456789abcdef01234567"' >> skywatch.py
+$ git add skywatch.py
+$ git commit -m 'Add a backup token'
+4:51AM INF 0 commits scanned.
+4:51AM INF scanned ~67 bytes (67 bytes) in 212ms
+4:51AM WRN leaks found: 1
+exit code: 1
+$ git restore --staged skywatch.py
+$ git checkout -- skywatch.py
+$ echo 'Demo project: nothing here is real.' >> README.md
+$ git add README.md
+$ git commit -m 'Note the demo status in the README'
+4:51AM INF 0 commits scanned.
+4:51AM INF scanned ~36 bytes (36 bytes) in 209ms
+4:51AM INF no leaks found
+[main 9fca171] Note the demo status in the README
+ 1 file changed, 1 insertion(+)
+exit code: 0

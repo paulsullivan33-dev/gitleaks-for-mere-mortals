@@ -1,0 +1,15 @@
+$ gitleaks git --no-banner --no-color .
+4:51AM INF 8 commits scanned.
+4:51AM INF scanned ~2900 bytes (2.90 KB) in 259ms
+4:51AM WRN leaks found: 6
+exit code: 1
+$ gitleaks git --no-banner --no-color --log-opts="HEAD~1..HEAD" .
+4:51AM INF 1 commits scanned.
+4:51AM INF scanned ~62 bytes (62 bytes) in 211ms
+4:51AM INF no leaks found
+exit code: 0
+$ gitleaks git --no-banner --no-color --log-opts="93db213d43f1d05905743ab429c59ecf8c91abe0^..93db213d43f1d05905743ab429c59ecf8c91abe0" .
+4:51AM INF 1 commits scanned.
+4:51AM INF scanned ~267 bytes (267 bytes) in 241ms
+4:51AM WRN leaks found: 1
+exit code: 1

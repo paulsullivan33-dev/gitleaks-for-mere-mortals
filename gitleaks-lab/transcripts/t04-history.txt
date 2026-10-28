@@ -1,0 +1,22 @@
+$ ls config.py deploy_key.pem
+ls: cannot access 'config.py': No such file or directory
+ls: cannot access 'deploy_key.pem': No such file or directory
+$ git log --oneline --all -- config.py
+89bef2a Remove hardcoded keys, use the environment
+93db213 Hardcode cloud keys while prototyping
+$ git show 93db213d43f1d05905743ab429c59ecf8c91abe0:config.py
+# Prototype settings. TODO: move these to the environment.
+# Both values are invented samples planted for the scanning lab.
+AWS_ACCESS_KEY_ID = "AKIAQ7XMP2K4RW6T5VZ3"
+AWS_SECRET_ACCESS_KEY = "FakeSecret/Ab3dEf6hIjKlMnOpQrStUvWxYz012"
+AWS_DEFAULT_REGION = "us-east-1"
+$ git show 89bef2a0c45f232f1511bc34b0d1b978ad9e8dcd --stat
+commit 89bef2a0c45f232f1511bc34b0d1b978ad9e8dcd
+Author: Pat Example <pat@example.com>
+Date:   Thu Jan 8 09:45:00 2026 +0000
+
+    Remove hardcoded keys, use the environment
+
+ README.md | 2 ++
+ config.py | 5 -----
+ 2 files changed, 2 insertions(+), 5 deletions(-)

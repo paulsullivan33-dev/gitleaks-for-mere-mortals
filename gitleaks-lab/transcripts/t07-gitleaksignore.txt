@@ -1,0 +1,12 @@
+$ jq -r '.[] | select(.File == "tests/test_api_client.py") | .Fingerprint' ../first-report.json
+289beab6242fc604ee6d09b4b2deac47de864159:tests/test_api_client.py:generic-api-key:10
+$ cat > .gitleaksignore <<'EOF'
+289beab6242fc604ee6d09b4b2deac47de864159:tests/test_api_client.py:generic-api-key:10
+EOF
+$ cat .gitleaksignore
+289beab6242fc604ee6d09b4b2deac47de864159:tests/test_api_client.py:generic-api-key:10
+$ gitleaks git --no-banner --no-color .
+4:51AM INF 8 commits scanned.
+4:51AM INF scanned ~2900 bytes (2.90 KB) in 215ms
+4:51AM WRN leaks found: 5
+exit code: 1

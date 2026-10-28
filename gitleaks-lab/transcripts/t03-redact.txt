@@ -1,0 +1,77 @@
+$ gitleaks git --no-banner --no-color --verbose --redact .
+Finding:     REDACTED
+Secret:      REDACTED
+RuleID:      private-key
+Entropy:     4.644064
+File:        deploy_key.pem
+Line:        1
+Commit:      5d17172e0df972b8cd2d9d80bd100a6ce9349d10
+Author:      Pat Example
+Email:       pat@example.com
+Date:        2026-01-09T14:20:00Z
+Fingerprint: 5d17172e0df972b8cd2d9d80bd100a6ce9349d10:deploy_key.pem:private-key:1
+
+Finding:     REDACTED
+Secret:      REDACTED
+RuleID:      private-key
+Entropy:     3.753052
+Tags:        [decoded:base64 decode-depth:1]
+File:        deploy_key.pem
+Line:        1
+Commit:      5d17172e0df972b8cd2d9d80bd100a6ce9349d10
+Author:      Pat Example
+Email:       pat@example.com
+Date:        2026-01-09T14:20:00Z
+Fingerprint: 5d17172e0df972b8cd2d9d80bd100a6ce9349d10:deploy_key.pem:private-key:1
+
+Finding:     DUMMY_TOKEN = "REDACTED"
+Secret:      REDACTED
+RuleID:      generic-api-key
+Entropy:     4.414833
+File:        tests/test_api_client.py
+Line:        10
+Commit:      289beab6242fc604ee6d09b4b2deac47de864159
+Author:      Pat Example
+Email:       pat@example.com
+Date:        2026-01-12T10:00:00Z
+Fingerprint: 289beab6242fc604ee6d09b4b2deac47de864159:tests/test_api_client.py:generic-api-key:10
+
+Finding:     REDACTED
+Secret:      REDACTED
+RuleID:      aws-access-token
+Entropy:     4.121928
+File:        config.py
+Line:        3
+Commit:      93db213d43f1d05905743ab429c59ecf8c91abe0
+Author:      Pat Example
+Email:       pat@example.com
+Date:        2026-01-06T10:30:00Z
+Fingerprint: 93db213d43f1d05905743ab429c59ecf8c91abe0:config.py:aws-access-token:3
+
+Finding:     REDACTED
+Secret:      REDACTED
+RuleID:      github-pat
+Entropy:     5.171928
+File:        tools/release.sh
+Line:        4
+Commit:      1e3086a53e17ff25610ec642420bd363bbc07472
+Author:      Pat Example
+Email:       pat@example.com
+Date:        2026-01-07T11:15:00Z
+Fingerprint: 1e3086a53e17ff25610ec642420bd363bbc07472:tools/release.sh:github-pat:4
+
+Finding:     WEATHER_API_TOKEN = "REDACTED"
+Secret:      REDACTED
+RuleID:      generic-api-key
+Entropy:     4.414833
+File:        api_client.py
+Line:        5
+Commit:      1e3086a53e17ff25610ec642420bd363bbc07472
+Author:      Pat Example
+Email:       pat@example.com
+Date:        2026-01-07T11:15:00Z
+Fingerprint: 1e3086a53e17ff25610ec642420bd363bbc07472:api_client.py:generic-api-key:5
+
+4:51AM INF 8 commits scanned.
+4:51AM INF scanned ~2900 bytes (2.90 KB) in 230ms
+4:51AM WRN leaks found: 6

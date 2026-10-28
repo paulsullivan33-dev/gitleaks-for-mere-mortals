@@ -1,0 +1,20 @@
+$ gitleaks git --no-banner --no-color --report-format json --report-path ../baseline.json .
+4:51AM INF 8 commits scanned.
+4:51AM INF scanned ~2900 bytes (2.90 KB) in 230ms
+4:51AM WRN leaks found: 5
+exit code: 1
+$ gitleaks git --no-banner --no-color --baseline-path ../baseline.json .
+4:51AM INF 8 commits scanned.
+4:51AM INF scanned ~2900 bytes (2.90 KB) in 234ms
+4:51AM INF no leaks found
+exit code: 0
+$ echo 'SERVICE_TOKEN = "skw_live_ffffeeeeddddccccbbbbaaaa9999888877776666"' >> api_client.py
+$ git add api_client.py
+$ git commit -m 'Add a second service token'
+$ gitleaks git --no-banner --no-color --baseline-path ../baseline.json .
+4:51AM INF 9 commits scanned.
+4:51AM INF scanned ~2968 bytes (2.97 KB) in 253ms
+4:51AM WRN leaks found: 1
+exit code: 1
+$ git reset --hard HEAD~1
+HEAD is now at 3cfdb46 Fix a capital in the README

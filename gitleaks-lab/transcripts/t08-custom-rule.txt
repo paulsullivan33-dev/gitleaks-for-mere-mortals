@@ -1,0 +1,33 @@
+$ ./gitleaks-lab/make-fixture.sh leaky-app-rules
+Fixture repository built in: leaky-app-rules
+3cfdb46 Fix a capital in the README
+289beab Add tests with a dummy token
+ba9ef98 Document the key formats
+13cdb9f Remove deploy key, use an agent instead
+5d17172 Add deploy key for the demo server
+89bef2a Remove hardcoded keys, use the environment
+1e3086a Add upstream API client and release script
+93db213 Hardcode cloud keys while prototyping
+8342956 Initial commit: skywatch skeleton
+$ cp ../leaky-app-rules.toml .gitleaks.toml
+$ cat .gitleaks.toml
+title = "skywatch lab config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "skywatch-token"
+description = "Skywatch upstream API token (project-specific format)"
+regex = '''skw_live_[0-9a-f]{40}'''
+keywords = ["skw_live_"]
+$ gitleaks git --no-banner --no-color --report-format json --report-path ../rules-report.json .
+4:51AM INF 8 commits scanned.
+4:51AM INF scanned ~2900 bytes (2.90 KB) in 221ms
+4:51AM WRN leaks found: 6
+exit code: 1
+$ jq -r '.[].RuleID' ../rules-report.json | sort | uniq -c
+      1 aws-access-token
+      1 github-pat
+      2 private-key
+      2 skywatch-token
